@@ -1,0 +1,12 @@
+<p>editdm works!</p>
+
+<h1>EDIT</h1>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <label for="">TenDM</label><br>
+    <input type="text" id="name" formControlName="name" [(ngModel)]="danhmuc.name" />
+    <div *ngIf="f['name'].touched && f['name'].invalid">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">body is required</div>
+    </div><br>
+    <button type="submit" [disabled] = "!form.valid">Submit</button>
+</form>

@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <label for="">Name</label><br>
+    <input type="text"  id="name" [(ngModel)]="sanpham.name" formControlName = "name" />
+    <div *ngIf="f['name'].touched && f['name'].invalid">
+        <div *ngIf="f['name'].errors && f['name'].errors['required']">body is required.</div>
+    </div><br>
+    <label for="">quantity</label><br>
+   <input type="number"  id="quantity" [(ngModel)]="sanpham.quantity" formControlName = "quantity" min="1" />
+   <div *ngIf="f['quantity'].touched && f['quantity'].invalid">
+    <div *ngIf="f['quantity'].errors && f['quantity'].errors['required']">body is required.</div>
+   </div><br>
+   <label for="">price</label><br>
+   <input type="number"  id="price" [(ngModel)]=" sanpham.price" formControlName = "price" min="1" />
+   <div *ngIf="f['price'].touched && f['price'].invalid">
+       <div *ngIf="f['price'].errors && f['price'].errors['required']">body is required.</div>
+   </div><br>
+   <label for="">status</label><br>
+   <input type="number"  id="status" [(ngModel)]="sanpham.status" formControlName = "status" min="1"/>
+   <div *ngIf="f['status'].touched && f['status'].invalid">
+       <div *ngIf="f['status'].errors && f['status'].errors['required']">body is required.</div>
+   </div><br>
+   <label for="">image</label><br>
+   <img height="120" width="280" src= {{url}} alt=""><br>
+   <input type="text"  id="image" [(ngModel)]="sanpham.image" formControlName = "image" />
+  
+   <div *ngIf="f['image'].touched && f['image'].invalid">
+       <div *ngIf="f['image'].errors && f['image'].errors['required']">body is required.</div>
+   </div>
+  
+   <br>
+   <label for="">description</label><br>
+   <input type="text"  id="description" [(ngModel)]="sanpham.description" formControlName = "description" />
+   <div *ngIf="f['description'].touched && f['description'].invalid">
+    <div *ngIf="f['description'].errors && f['description'].errors['required']">body is required.</div>
+   </div><br>
+   <label>Danh muc</label><br>
+   <select id="id_danhmuc" name="id_danhmuc" [(ngModel)]="sanpham.id_danhmuc" formControlName = "id_danhmuc">
+           <option  selected>chon danh muc</option>
+           <option *ngFor="let dm of danhmuc" value="{{dm._id}}">{{dm.name}}</option>
+    </select>
+    <div *ngIf="f['id_danhmuc'].touched && f['id_danhmuc'].invalid">
+       <div *ngIf="f['id_danhmuc'].errors && f['id_danhmuc'].errors['required']">body is required.</div>
+      </div>
+      <br>
+   <button type="submit" [disabled]="!form.valid">Submit</button>
+</form>

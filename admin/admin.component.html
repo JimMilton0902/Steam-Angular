@@ -1,0 +1,80 @@
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .headerArea {
+        background-color: #003366;
+        color: white;
+        padding: 20px 0;
+    }
+
+    .containerct {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .headerct {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .headerct img {
+        width: 100px;
+        height: auto;
+    }
+
+    .left-bottom h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+
+    .menuct {
+        margin-top: 20px;
+    }
+
+    .menuct ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menuct li {
+        margin: 0 10px;
+    }
+
+    .menuct a {
+        text-decoration: none;
+        color: white;
+        font-size: 1em;
+        transition: color 0.3s;
+    }
+
+    .menuct a:hover {
+        color: #ffcc00;
+    }
+</style>
+<div class="headerArea">
+    <div class="containerct">
+      <div class="headerct">
+          <img src="../../assets/image/logo.png" alt ="s"/>
+          <div class="left-bottom">
+              <h1>Steam</h1>                
+          </div>
+      </div>
+      <nav class="menuct">
+          <ul>
+              <li><a href='/'>Trang chủ</a> </li>
+              <li ><a href='danhmuc/indexdm'>Danh mục</a> </li>
+              <li ><a href='sanpham/indexsp'>Sản phẩm</a> </li>
+              <li><a href='user/view'>Người dùng</a>
+              </li>
+              <li> Ý tưởng </li>
+          </ul>
+      </nav>
+  </div>
+</div>

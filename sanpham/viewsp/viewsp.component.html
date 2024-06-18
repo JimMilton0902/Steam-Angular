@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h1 a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        h1 a:hover {
+            color: #0056b3;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+        }
+        .container div {
+            margin-bottom: 15px;
+        }
+        .container strong {
+            display: inline-block;
+            width: 80px;
+        }
+        .container img {
+            display: block;
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="#" routerLink="/"  >Quay lại trang chủ</a></h1>
+
+    <div class="container">
+        <div>
+            <strong>ID: </strong><span>{{sanpham._id}}</span>
+        </div>
+        <div>
+            <strong>Tên: </strong><span>{{sanpham.name}}</span>
+        </div>
+        <div>
+            <strong>Giá tiền: </strong><span>{{sanpham.price}}</span>
+        </div>
+        <div>
+            <strong>Hình ảnh: </strong><span><img height="100" width="120" src="{{sanpham.image}}"/></span>
+        </div>
+
+        <div>
+            <button class="btn" [routerLink]="['/giohang/',sanpham._id,'index']">Thêm vào giỏ </button>
+        </div>
+    </div>
+</body>
+</html>

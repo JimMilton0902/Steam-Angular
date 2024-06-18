@@ -1,0 +1,52 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<div class="container">
+  <h1>Danh sách sản phẩm</h1>
+  <nav class="navbar navbar-expand-sm bg-light">
+  
+      <div class="container-fluid">
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/sanpham/createsp" >Tạo sản phẩm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index/">Trang chủ</a>
+          </li>
+        </ul>
+      </div>
+    
+    </nav>
+  <table width="100%" border="1" >
+      <tr *ngFor="let dm of dmsp, let i = index">
+          <td><b>({{i+1}})</b>  -  <strong>{{dm._id}}  -  {{dm.name}} </strong>
+              <table class="table table-striped table-bordered">
+                  <thead>
+                  <tr>
+                      <td>#</td>  
+                      <td>Name</td>
+                      <td>Quantity</td>
+                      <td>Price</td>
+                      <td>Status</td>
+                      <td>Image</td>
+                      <td>Description</td>
+                      <td>Date</td>
+                  </tr>
+              </thead><tbody>
+                  <tr *ngFor="let item of dm.sanphams, let i = index">
+                      <td>{{i + 1 }}</td>
+                      <td>{{item.name}}</td>
+                      <td>{{item.quantity}}</td>
+                      <td>{{item.price}}</td>
+                      <td>{{item.status}}</td>
+                      <td><img height="250" width="200" src="{{item.image}}" alt=""></td>
+                      <td>{{item.description}}</td>
+                      <td>{{item.createdAt}}</td>
+                  </tr>
+              </tbody>
+              </table>
+          </td>
+  
+  
+      </tr>
+  </table>
+  </div>
