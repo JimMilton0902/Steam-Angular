@@ -1,0 +1,57 @@
+POST http://localhost:3001/danhmuc
+Content-Type: application/json
+
+
+{
+    "name":"abcs"
+}
+
+###
+GET  http://localhost:3001/danhmuc
+Content-Type: application/json
+
+###
+DELETE http://localhost:3001/danhmuc/663a20946e5f088a894dbf12
+Content-Type: application/json
+
+
+###
+PUT   http://localhost:3001/danhmuc/6634693599781542f2a40f69
+Content-Type: application/json
+
+
+{
+    "name" : "laptop 20"
+}
+
+###
+POST http://localhost:3001/user
+Content-Type: application/json
+
+
+{
+    "fullname" : "Tran Vinh Biet" ,
+    "email" : "vinhbiet@gmail.com",
+    "password" : "1234",
+    "phone" : "090909090",
+    "address" : "hcm"
+}
+###
+POST   http://localhost:3001/send-mail/thskhai@gmail.com
+Content-Type: application/json
+
+{
+    "donhang":"don hang cua khai"
+}
+###
+POST http://localhost:3001/user/login
+Content-Type: application/json
+
+
+{
+    "email":"vinhbiet@gmail.com",
+    "password":"1234"
+}
+
+###
+GET http://localhost:3001/dmsp/6658073c172c70ca963005c1
